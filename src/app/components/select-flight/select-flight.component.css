@@ -1,0 +1,21 @@
+label {
+    cursor: pointer;
+    filter: grayscale(100%);
+  }
+  
+  label:hover {
+    filter: grayscale(0);
+  }
+  input[type="radio"]:checked + label {
+    filter: grayscale(0);
+  }
+
+  .picture-container {
+    
+    height: 256px;
+    width: 128px;
+}
+mat-stepper {
+  margin-top: 50px;
+
+}

@@ -1,0 +1,28 @@
+<div class="login-content" >
+    
+    <mat-card > 
+        <h1>Book Fly Express</h1>
+      <mat-card-content>
+        <div class="center" *ngIf="wrongCredentials">
+          <p  style="color:red;" >Wrong password or username.</p>
+        </div>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" >
+          <div class="head">Login</div>
+          <mat-form-field class="full-width-input">
+            <input matInput placeholder="Username" formControlName="username" required>
+            <mat-error *ngIf="isFieldInvalid('username')" >
+              Enter your username.
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width-input">
+            <input matInput type="password" placeholder="Password" formControlName="password" required>
+            <mat-error *ngIf="isFieldInvalid('password')">
+              Enter your password.
+            </mat-error>
+          </mat-form-field>
+          <button mat-raised-button color="primary">Log in</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
