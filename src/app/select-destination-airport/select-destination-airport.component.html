@@ -1,0 +1,56 @@
+<mat-tab-group>
+    <mat-tab label="Paris">
+<ng-template matStepLabel>Select your destination airport </ng-template>
+  <mat-card >
+    <mat-card-header>
+      <mat-card-title>Airport Location</mat-card-title>
+      <mat-card-subtitle>95700 Roissy-en-France Paris</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/1280px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg" >
+    <mat-card-content>
+        <iframe  id="forecast_embed" type="text/html" frameborder="0" height="245" width="100%" src="https://forecast.io/embed/#lat=48.8566&amp;lon=2.3522&amp;name=wroclaw&amp;color=#64c8e6&amp;text-color=#355b8c&amp;hide-header=1&amp;units=ca">
+        </iframe>
+    </mat-card-content>
+    <mat-card-actions>
+        <button  color="primary" mat-button matStepperPrevious>Back</button>
+        <button  color="primary" mat-button matStepperNext>Select</button>
+    </mat-card-actions>
+  </mat-card>
+<div>
+</div>
+</mat-tab>
+<mat-tab label="Gdańsk"> 
+  <mat-card >
+    <mat-card-header>
+      <mat-card-title>Airport Location</mat-card-title>
+      <mat-card-subtitle>ul. Juliusza Słowackiego 200, 80-298 Gdańsk</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/D%C5%82ugie_Pobrze%C5%BCe_in_Gda%C5%84sk_%28Mot%C5%82awa%29.jpg/1280px-D%C5%82ugie_Pobrze%C5%BCe_in_Gda%C5%84sk_%28Mot%C5%82awa%29.jpg" >
+    <mat-card-content>
+        <iframe  id="forecast_embed" type="text/html" frameborder="0" height="245" width="100%" src="https://forecast.io/embed/#lat=54.3520&amp;lon=18.6466&amp;name=krakow&amp;color=#64c8e6&amp;text-color=#355b8c&amp;hide-header=1&amp;units=ca">
+        </iframe>
+    </mat-card-content>
+    <mat-card-actions>
+        <button color="primary" mat-button matStepperPrevious >Back</button>
+        <button color="primary" mat-button matStepperNext >Select</button>
+    </mat-card-actions>
+  </mat-card>
+</mat-tab>
+<mat-tab label="Nowy Jork">
+  <mat-card >
+    <mat-card-header>
+      <mat-card-title>Airport Location</mat-card-title>
+      <mat-card-subtitle>Queens, NY 11430, Nowy Jork</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://a.cdn-hotels.com/gdcs/production148/d757/6059b2a0-8f10-11e8-a0da-0242ac11004d.jpg?impolicy=fcrop&w=1600&h=1066&q=mediumPari" >
+    <mat-card-content>
+        <iframe  id="forecast_embed" type="text/html" frameborder="0" height="245" width="100%" src="https://forecast.io/embed/#lat=40.7128&amp;lon=74.0060&amp;name=krakow&amp;color=#64c8e6&amp;text-color=#355b8c&amp;hide-header=1&amp;units=ca">
+        </iframe>
+    </mat-card-content>
+    <mat-card-actions>
+        <button color="primary" mat-button matStepperPrevious >Back</button>
+        <button color="primary" mat-button matStepperNext >Select</button>
+    </mat-card-actions>
+  </mat-card>
+</mat-tab>
+</mat-tab-group>
