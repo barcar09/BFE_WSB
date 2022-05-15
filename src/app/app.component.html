@@ -1,3 +1,5 @@
+
+
 <button *ngIf="checkIfLogin()" (click)="onLogout()"  class="logout-icon" title="logout button" mat-icon-button color="primary">
     <mat-icon aria-hidden="true" >
         power_settings_new
@@ -5,5 +7,8 @@
 </button>
 <div class="grid-container">
     <div ><img class="picture-container" src="../assets/login-foto.jpg"></div>
-    <div class="router-container"><router-outlet  ></router-outlet></div>
+    <div class="router-container">
+        <div id="header-container"><h1 id="header">Book Fly Express</h1></div>
+        <router-outlet  ></router-outlet>
+    </div>
 </div>

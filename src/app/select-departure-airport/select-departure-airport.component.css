@@ -2,3 +2,7 @@ img {
     width: 48vw;
     height: 64vh;
 }
+
+#clock {
+    margin: 10px;
+}
