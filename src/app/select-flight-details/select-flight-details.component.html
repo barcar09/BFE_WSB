@@ -1,0 +1,50 @@
+<form id="select-flight-details">
+    <div class="details-flight-container">
+        <mat-form-field class="form-class" appearance="fill">
+            <mat-label>Choose a flight date </mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <div class="person-chooser-container">
+          <div class="stepper-input stepper__input">
+              <button class="toggle-less" (click)="toggleLess()">
+                <img src="assets/minus.svg" [attr.alt]="ariaLabelLess" />
+              </button>
+              <div class="stepper-input-field" name="range-value" aria-atomic="true" aria-live="polite" aria-relevant="all">
+                {{renderedValue}}
+              </div>
+              <button class="toggle-more" (click)="toggleMore()">
+                <img src="assets/plus.svg" [attr.alt]="ariaLabelMore" />
+              </button>
+            </div>
+            <mat-hint>Select the number of passangers (max 8)</mat-hint>
+          </div>
+          <button color="primary" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>info</mat-icon>
+          </button>
+
+      </div>
+    <div>
+      <div class="person-container" *ngFor="let el of personFormGroups.controls; let i = index" [formGroupName]="i">
+        <h3>person {{i+1}}</h3>
+        <select formControlName="personBaggageType">
+          <option value="" disabled>choose bagage type</option>
+          <option value="CarryOn">Carry-on baggage</option>
+          <option value="Checked">Carry-on + checked baggage</option>
+        </select>
+        <select formControlName="personType">
+          <option value="" disabled>choose age</option>
+          <option value="baby">baby</option>
+          <option value="kid">kid</option>
+          <option value="adult">adult</option>
+        </select>
+        
+      </div>
+    </div>
+    <div>
+      <button color="primary" mat-button matStepperPrevious>Back</button>
+      <button color="primary" mat-button matStepperNext>Next</button>
+    </div>
+  </form>

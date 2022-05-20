@@ -6,19 +6,8 @@
       <app-select-destination-airport></app-select-destination-airport>
     </mat-step>
     <mat-step label="Fill out your address">
-        <!-- #enddocregion label -->
-          <form [formGroup]="secondFormGroup">
-            <mat-form-field appearance="fill">
-              <mat-label>Address</mat-label>
-              <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                     required>
-            </mat-form-field>
-            <div>
-              <button mat-button matStepperPrevious>Back</button>
-              <button mat-button matStepperNext>Next</button>
-            </div>
-          </form>
-        </mat-step>
+        <app-select-flight-details></app-select-flight-details>
+    </mat-step>
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
       <p>You are now done.</p>

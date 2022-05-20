@@ -11,6 +11,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { AuthService } from './services/auth.service';
 import { SelectDepartureAirportComponent } from './select-departure-airport/select-departure-airport.component';
 import { SelectDestinationAirportComponent } from './select-destination-airport/select-destination-airport.component';
+import { SelectFlightDetailsComponent } from './select-flight-details/select-flight-details.component';
 
 const appRoutes:Routes = [
   {path:"", component: SelectFlightComponent, canActivate:[AuthGuardService]},
@@ -24,6 +25,7 @@ const appRoutes:Routes = [
     SelectFlightComponent,
     SelectDepartureAirportComponent,
     SelectDestinationAirportComponent,
+    SelectFlightDetailsComponent,
   ],
   imports: [
     BrowserModule,
