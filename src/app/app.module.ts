@@ -12,6 +12,8 @@ import { AuthService } from './services/auth.service';
 import { SelectDepartureAirportComponent } from './select-departure-airport/select-departure-airport.component';
 import { SelectDestinationAirportComponent } from './select-destination-airport/select-destination-airport.component';
 import { SelectFlightDetailsComponent } from './select-flight-details/select-flight-details.component';
+import { UserInformationPopupComponent } from './user-information-popup/user-information-popup.component';
+import { SharedInformationService } from './services/shared-information.service';
 
 const appRoutes:Routes = [
   {path:"", component: SelectFlightComponent, canActivate:[AuthGuardService]},
@@ -26,6 +28,7 @@ const appRoutes:Routes = [
     SelectDepartureAirportComponent,
     SelectDestinationAirportComponent,
     SelectFlightDetailsComponent,
+    UserInformationPopupComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,7 @@ const appRoutes:Routes = [
     RouterModule.forRoot(appRoutes)
 
   ],
-  providers: [AuthService, AuthGuardService],
+  providers: [AuthService, AuthGuardService, SharedInformationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

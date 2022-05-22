@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedInformationService } from '../services/shared-information.service';
 
 @Component({
   selector: 'app-select-departure-airport',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./select-departure-airport.component.css']
 })
 export class SelectDepartureAirportComponent implements OnInit {
-
-  constructor() { }
+  constructor( private sharedService:SharedInformationService) { }
 
   ngOnInit(): void {
+  }
+
+  selectDepartureAirport(airport: string) {
+      this.sharedService.selectedDepartureAirport = airport
   }
 
 }

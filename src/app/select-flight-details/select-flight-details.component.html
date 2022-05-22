@@ -1,4 +1,4 @@
-<form id="select-flight-details">
+<form [formGroup]="personFormGroup" id="select-flight-details">
     <div class="details-flight-container">
         <mat-form-field class="form-class" appearance="fill">
             <mat-label>Choose a flight date </mat-label>
@@ -21,28 +21,29 @@
             </div>
             <mat-hint>Select the number of passangers (max 8)</mat-hint>
           </div>
-          <button color="primary" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+          <button color="primary" (click)="openInformationPopup()" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
             <mat-icon>info</mat-icon>
           </button>
 
       </div>
-    <div>
+    <div formArrayName="persons">
       <div class="person-container" *ngFor="let el of personFormGroups.controls; let i = index" [formGroupName]="i">
         <h3>person {{i+1}}</h3>
-        <select formControlName="personBaggageType">
+        <select (change)="calculateTotalCost()" formControlName="personBaggageType">
           <option value="" disabled>choose bagage type</option>
-          <option value="CarryOn">Carry-on baggage</option>
-          <option value="Checked">Carry-on + checked baggage</option>
+          <option value="0">Carry-on baggage</option>
+          <option value="20">Carry-on + checked baggage</option>
         </select>
-        <select formControlName="personType">
+        <select (change)="calculateTotalCost()" formControlName="personType">
           <option value="" disabled>choose age</option>
-          <option value="baby">baby</option>
-          <option value="kid">kid</option>
-          <option value="adult">adult</option>
+          <option value="0.75">baby</option>
+          <option value="0.50">kid</option>
+          <option value="1">adult</option>
         </select>
         
       </div>
     </div>
+    <h2> Total cost : {{totalCost}}$</h2>
     <div>
       <button color="primary" mat-button matStepperPrevious>Back</button>
       <button color="primary" mat-button matStepperNext>Next</button>

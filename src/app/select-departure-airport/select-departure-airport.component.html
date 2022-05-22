@@ -13,7 +13,7 @@
         </iframe>
     </mat-card-content>
     <mat-card-actions>
-        <button  color="primary" mat-button matStepperNext>Select</button>
+        <button (click)="selectDepartureAirport('Wroclaw')"  color="primary" mat-button matStepperNext>Select</button>
     </mat-card-actions>
   </mat-card>
 <div>
@@ -31,7 +31,7 @@
         </iframe>
     </mat-card-content>
     <mat-card-actions>
-        <button color="primary" mat-button matStepperNext>Select</button>
+        <button (click)="selectDepartureAirport('Krakow')" color="primary" mat-button matStepperNext>Select</button>
     </mat-card-actions>
   </mat-card>
 </mat-tab>
@@ -47,7 +47,7 @@
         </iframe>
     </mat-card-content>
     <mat-card-actions>
-        <button color="primary" mat-button matStepperNext>Select</button>
+        <button (click)="selectDepartureAirport('Warszawa')" color="primary" mat-button matStepperNext>Select</button>
     </mat-card-actions>
   </mat-card>
 </mat-tab>

@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators, FormArray} from '@angular/forms';
+import { UserInformationPopupComponent } from '../user-information-popup/user-information-popup.component';
+import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
+import { SharedInformationService } from '../services/shared-information.service';
 @Component({
   selector: 'app-select-flight-details',
   templateUrl: './select-flight-details.component.html',
@@ -8,7 +11,6 @@ import { FormBuilder, FormControl, FormGroup, Validators, FormArray} from '@angu
 export class SelectFlightDetailsComponent implements OnInit {
   
   personFormGroup: FormGroup;
-  nazwaFormularza: FormGroup;
   @Input() initialValue: number = 0;
   @Input() step: number = 1;
   @Input() min: number = 0;
@@ -18,13 +20,11 @@ export class SelectFlightDetailsComponent implements OnInit {
   @Input() ariaLabelMore: string = "";
   renderedValue: string = "";
   value: number = 0;
-
-  constructor( private fb:FormBuilder ) { }
+  totalCost:number = 0;
+  constructor( private fb:FormBuilder, public dialog: MatDialog , private sharedService:SharedInformationService ) { }
 
   ngOnInit(): void {
-    let  users = new FormArray([])
 
-    
     let personsArray = new FormArray([]);
     this.value = this.initialValue
     this.renderedValue = this.value.toString();
@@ -32,6 +32,7 @@ export class SelectFlightDetailsComponent implements OnInit {
     this.personFormGroup =this.fb.group({
       'persons': personsArray
     })
+    this.personFormGroup.valueChanges.subscribe( el=> console.log(el));
   }
   get personFormGroups(){
     return this.personFormGroup.get('persons') as FormArray
@@ -58,5 +59,22 @@ export class SelectFlightDetailsComponent implements OnInit {
     }
   };
   
+  openInformationPopup() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "40%";
+    dialogConfig.height = "500px";
+    const dialogRef = this.dialog.open(UserInformationPopupComponent,dialogConfig);
+
+ }
+ calculateTotalCost() {
+  let personsArray = this.personFormGroup.get("persons") as FormArray;
+  this.totalCost = 0
+  for (const el of personsArray.value) {
+        this.totalCost += (Number(el.personType) * this.sharedService.selectedCost) + Number(el.personBaggageType)
+  }
+ }
+
   
 }
