@@ -17,6 +17,7 @@ export class SelectDestinationAirportComponent implements OnInit {
 
   selectDestinationAirport(place: string, cost: number, coordination: [string, string]) {
     this.sharedService.selectedDestinationAirport = place
+    console.log(this.sharedService.selectedDestinationAirport)
     this.sharedService.selectedCost = cost
     this.sharedService.destinationCoordinates = coordination
   }

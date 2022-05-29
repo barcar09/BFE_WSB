@@ -40,12 +40,20 @@
           <option value="0.50">kid</option>
           <option value="1">adult</option>
         </select>
+        <select formControlName="seatNumber">
+          <option value="" disabled>choose seat number</option>
+          <option  *ngFor="let el of counter(seatSchemaNumbersCount); let i = index" [value]="i"> {{i}}</option>
+        </select>
+        <select formControlName="seatLetter">
+          <option value="" disabled>choose seat letter</option>
+          <option *ngFor="let el of seatSchemaLetters; let i = index" [value]="el"> {{el}}</option>
+        </select>
         
       </div>
     </div>
     <h2> Total cost : {{totalCost}}$</h2>
     <div>
       <button color="primary" mat-button matStepperPrevious>Back</button>
-      <button color="primary" mat-button matStepperNext>Next</button>
+      <button color="primary" (click)="savePersonsArray()" mat-button matStepperNext>Next</button>
     </div>
   </form>

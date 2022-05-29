@@ -14,6 +14,7 @@ import { SelectDestinationAirportComponent } from './select-destination-airport/
 import { SelectFlightDetailsComponent } from './select-flight-details/select-flight-details.component';
 import { UserInformationPopupComponent } from './user-information-popup/user-information-popup.component';
 import { SharedInformationService } from './services/shared-information.service';
+import { SummaryComponent } from './summary/summary.component';
 
 const appRoutes:Routes = [
   {path:"", component: SelectFlightComponent, canActivate:[AuthGuardService]},
@@ -29,6 +30,7 @@ const appRoutes:Routes = [
     SelectDestinationAirportComponent,
     SelectFlightDetailsComponent,
     UserInformationPopupComponent,
+    SummaryComponent,
   ],
   imports: [
     BrowserModule,

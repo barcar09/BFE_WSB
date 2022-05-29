@@ -9,12 +9,10 @@
         <app-select-flight-details></app-select-flight-details>
     </mat-step>
     <mat-step>
-      <ng-template matStepLabel>Done</ng-template>
-      <p>You are now done.</p>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
+      <div class="summary">
+        <app-summary></app-summary>
       </div>
+      <button color="primary" mat-button matStepperPrevious>Back</button>
     </mat-step>
   </mat-stepper>
   

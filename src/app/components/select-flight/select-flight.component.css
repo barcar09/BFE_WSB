@@ -19,3 +19,7 @@ mat-stepper {
   margin-top: 50px;
 
 }
+.summary {
+  display: flex;
+  justify-content: center;
+}
